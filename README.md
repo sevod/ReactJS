@@ -43,3 +43,11 @@ https://www.youtube.com/watch?v=gb7gMluAeao&list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWh
 `<Route exact path = '/dialogs' component={Dialogs}/>`
 
 отображение компоненты `Dialogs` происходит только при точном совпадении url.
+
+**Урок 23**
+
+Рефакторим файл Dialogs.jsx.
+
+Добавляем новую компоненту и props. 
+
+Рефакторим MyPosts.jsx
