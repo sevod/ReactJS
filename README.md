@@ -8,7 +8,6 @@ https://www.youtube.com/watch?v=gb7gMluAeao&list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWh
 Конспект выше еще не писал, буду восполнять
 
 **Урок 20**
------------------
 
 Для перехода по сслыкам без перезагрузки страницы вместо
 
@@ -26,6 +25,21 @@ https://www.youtube.com/watch?v=gb7gMluAeao&list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWh
 
 **20.08.2020**
 -------------------------
+
 **Урок 21**
 
 Правим файл Dilogs.jsx и Dilogs.module.css
+
+**Урок 22**
+
+В файл Dialogs.jsx добавляем NavLink'и
+
+`<NavLink to="/dialogs/1">Dimych</NavLink>`
+
+Если в `<Route path = '/dialogs' component={Dialogs}/>`
+
+добавить `exact`
+
+`<Route exact path = '/dialogs' component={Dialogs}/>`
+
+отображение компоненты `Dialogs` происходит только при точном совпадении url.
