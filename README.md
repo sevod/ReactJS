@@ -3,6 +3,11 @@
 ------------------------------------
 https://www.youtube.com/watch?v=gb7gMluAeao&list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8&index=1
 
+
+**Установка React** 
+
+https://github.com/facebook/create-react-app
+
 **19.08.2020**
 ------------------------
 Конспект выше еще не писал, буду восполнять
@@ -102,3 +107,9 @@ let dialogsElements = dialogs.map
 
     let dialogsElements = dialogs.map(forMap);
 ```
+
+**Урок 26**
+
+Рефакторим папку Dialogs, добавляем новые компоненты DialogsItem, Message
+
+Вынес props из MyPosts.jsx на уровень выше.
