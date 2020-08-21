@@ -54,7 +54,7 @@ https://www.youtube.com/watch?v=gb7gMluAeao&list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWh
 
 **21.08.2020**
 ------------------------
-**Урок24**
+**Урок 24**
 
 Рефакторим Dilogs.jsx
 
@@ -75,3 +75,30 @@ let dilogsData =
 <DialogItem name={dilogsData[0].name} id={dilogsData[0].id}/>
 ```
 Рефакторим MyPosts.jsx
+
+**Урок 25**
+
+Рефакторим Dialogs.jsx и MyPosts.jsx, используем функцию map и стрелочную функцию внутри
+
+```
+let dialogsElements = dialogs.map
+    (
+        dialogs => (<DialogItem name={dialogs.name} id={dialogs.id}/>)
+    );
+```
+
+В код вставляем полученный массив, где он сам "распаковывается"
+
+`{dialogsElements}`
+
+То же что и выше, но без стрелочных функций (для понимания)
+
+```    
+    function forMap(dialogs){
+        return (
+            <DialogItem name={dialogs.name} id={dialogs.id}/>
+        );
+    };
+
+    let dialogsElements = dialogs.map(forMap);
+```
