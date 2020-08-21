@@ -51,3 +51,27 @@ https://www.youtube.com/watch?v=gb7gMluAeao&list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWh
 Добавляем новую компоненту и props. 
 
 Рефакторим MyPosts.jsx
+
+**21.08.2020**
+------------------------
+**Урок24**
+
+Рефакторим Dilogs.jsx
+
+Создаем массив в котором будем хранить обьекты.
+
+``` 
+let dilogsData = 
+[
+    {id: 1, name: 'Dimych'},
+    {id: 2, name: 'Andrey'},
+    {id: 3, name: 'Sveta'},
+    {id: 4, name: 'Sasha'}
+];
+```
+Обращение к массиву
+
+```
+<DialogItem name={dilogsData[0].name} id={dilogsData[0].id}/>
+```
+Рефакторим MyPosts.jsx
