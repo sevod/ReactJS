@@ -113,3 +113,34 @@ let dialogsElements = dialogs.map
 Рефакторим папку Dialogs, добавляем новые компоненты DialogsItem, Message
 
 Вынес props из MyPosts.jsx на уровень выше.
+
+**22.08.2020**
+-----------------
+**Урок 27**
+
+В файле App.js меняем конструкцию 
+
+ `<Route path = '/dialogs' component={Dialogs}/>`
+ 
+ на
+ 
+ `<Route path = '/dialogs' render={() => <Dialogs />}/>`
+ 
+ что бы иметь возможность передавать props'ы
+ 
+ Так же содержимое скобок можно вынести в отдельную функцию и вызывать уже ее
+ 
+```
+let FunDialogs = () => <Dialogs />;
+<Route path = '/dialogs' render={FunDialogs}/>
+```
+
+В этом случае опять можно использовать не `render`, а `component`
+
+`<Route path = '/dialogs' component={FunDialogs}/>`
+
+Или даже так
+
+`<Route path = '/dialogs' component={() => <Dialogs />}/>`
+
+Есть предположение что `render` работает быстрее. (надо разбираться в документации)
