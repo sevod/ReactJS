@@ -8,6 +8,13 @@ https://www.youtube.com/watch?v=gb7gMluAeao&list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWh
 
 https://github.com/facebook/create-react-app
 
+ `<BrowserRouter>` импортируется с помощью `import {BrowserRouter, Route} from "react-router-dom";` 
+ 
+ и предварительной установки `"react-router-dom"`  с помощью node.js
+ 
+ `<Route path = '/dialogs' render={() => <Dialogs state = {props.state.dialogsPage}/>}/>` Route использует ту же компоненту
+
+
 **19.08.2020**
 ------------------------
 Конспект выше еще не писал, буду восполнять
@@ -154,3 +161,10 @@ let FunDialogs = () => <Dialogs />;
 **Урок 29**
 
 Создаем папку redux и в ней файл state.js. Выносим туда все данные. Все данные заносим в объект state.
+
+23.08.2020
+----------------------
+
+**Урок 30**
+
+ Видео на повторение. Нового кода нет.
