@@ -186,3 +186,8 @@ let newPostElement = React.createRef();
 let text = newPostElement.current.value;
 ```
 Недостаток `ref` в том что мы работаем с DOM а не Virtual DOM
+
+**Урок 32**
+
+В файл state.js добавили новую функцию addPost. Прокидываем ее по цепочки в MyPosts.js через props.
+Добавляем ее в onClic. При клике данные добавляются, но внешний вид пока не меняется.

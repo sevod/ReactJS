@@ -5,11 +5,12 @@ const Post = (props) => {
     return (
         <div className={s.item}>
             <div>
-                <img src='https://cdn.icon-icons.com/icons2/1879/PNG/512/iconfinder-1-avatar-2754574_120513.png'/>
-                {props.messege}
+                <img src='https://i.pinimg.com/originals/f3/af/3a/f3af3ab02e4ea2074d74c48770ed6784.png'/>
+                {props.message}
             </div>
-            <span>like {props.likesCount}</span>
-            <span> deslike</span>
+
+            <span className={s.like}>like {props.likesCount}</span>
+            <span className={s.like}> deslike</span>
         </div>
     );
 }
