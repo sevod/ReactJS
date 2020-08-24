@@ -18,6 +18,7 @@ const MyPosts = (props) => {
         props.updateNewPostText(text);
     };
 
+
     return (
         <div className={s.postBlock}>
             <h3>My posts</h3>
