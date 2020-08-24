@@ -199,3 +199,18 @@ let text = newPostElement.current.value;
 Концепция FLUX организация потока данных. Один из реализаций Redux.
 
 Lightshot для скринов.
+
+**24.08.2020**
+---------
+
+**Урок 34**
+
+Вводится понятие "STATE MANAGEMENT". Мы для этого будем использовать REDUX. Альтернатива MobX.
+
+В файле MyPosts.jsx в `<textarea ref={newPostElement} onChange={onPostChange} value={props.newPostText}/>` 
+Задаем обработчик `onChange` и функцию для него. `value` - значение поля, будем получать из props.
+
+Добавили функции `onPostChange` и `updateNewPostText` теперь данные в textarea ходят строго через state.
+Отрефакторили `addPost` теперь туда данные не передаем, они уже сразу находятся в state.
+
+С помощь **window.state = state**; в state.js мы в консоли можем отлавливать занчение state
