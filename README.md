@@ -243,3 +243,12 @@ Lightshot для скринов.
 
 Вводится понятие/метод в state.js `dispatch(action)`. Внутрь dispatch переносятся все методы из state.js. Рефакторим остальной код.
 
+**Урок 39**
+
+Разбираем action creator и action type
+
+Создаем ActionCreator в MyPosts.jsx.
+
+Action - Это объект!
+
+Переносим все в state.js
