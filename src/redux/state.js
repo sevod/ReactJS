@@ -24,26 +24,29 @@ let store = {
             ]
         }
     },
+    _callSubscriber(state){},
+
     getState() {
         return this._state;
     },
-    _callSubscriber(state){},
-    addPost(){
-        let newPost = {
-            id: 5,
-            message: store._state.profilePage.newPostText,
-            likesCount: 0
-        };
-        this._state.profilePage.postData.push(newPost);
-        this._state.profilePage.newPostText = '';
-        this._callSubscriber(this._state)
-    },
-    updateNewPostText(newText){
-        store._state.profilePage.newPostText = newText;
-        store._callSubscriber(this._state);
-    },
     subscribe(observer){
         this._callSubscriber = observer; //observer - наблюдатель
+    },
+
+    dispatch(action){ // {type: 'ADD-POST'}
+        if (action.type === 'ADD-POST'){
+            let newPost = {
+                id: 5,
+                message: store._state.profilePage.newPostText,
+                likesCount: 0
+            };
+            this._state.profilePage.postData.push(newPost);
+            this._state.profilePage.newPostText = '';
+            this._callSubscriber(this._state)
+        } else if (action.type === 'UPDATE-NEW-POST-TEXT'){
+            store._state.profilePage.newPostText = action.newText;
+            store._callSubscriber(this._state);
+        }
     }
 };
 

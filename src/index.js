@@ -5,16 +5,16 @@ import store from "./redux/state";
 import ReactDOM from 'react-dom';
 import App from './App';
 
-let renderEntireTree = () => {
+let renderEntireTree = (state) => {
     ReactDOM.render(
         <React.StrictMode>
-            <App state ={store.getState()} store={store}/>
+            <App state ={state} dispatch={store.dispatch.bind(store)}/>
         </React.StrictMode>,
         document.getElementById('root')
     );
 };
 
-renderEntireTree();
+renderEntireTree(store.getState());
 
 store.subscribe(renderEntireTree);
 // If you want your app to work offline and load faster, you can change

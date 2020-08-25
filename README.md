@@ -236,3 +236,10 @@ Lightshot для скринов.
 
 `props.store.addPost.bind(props.store)`
 
+**25.08.2020**
+------------
+
+**Урок 38**
+
+Вводится понятие/метод в state.js `dispatch(action)`. Внутрь dispatch переносятся все методы из state.js. Рефакторим остальной код.
+

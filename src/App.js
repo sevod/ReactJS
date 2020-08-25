@@ -12,20 +12,20 @@ import Settings from "./components/Settings/Settings";
 const App = (props) => {
     return (
         <BrowserRouter>
-        <div className='app-wrapper'>
-            <Header/>
-            <Navbar/>
-            <div className='app-wrapper-content'>
-                {/*<Route path = '/dialogs' component={FunDialogs}/>*/}
-                {/*<Route path = '/dialogs' render={FunDialogs}/>*/}
-                {/*<Route path = '/dialogs' component={() => <Dialogs />}/>*/}
-                <Route path = '/dialogs' render={() => <Dialogs state = {props.state.dialogsPage}/>}/>
-                <Route path = '/profile' render={() => <Profile profilePage = {props.state.profilePage} addPost ={props.store.addPost.bind(props.store)} updateNewPostText = {props.store.updateNewPostText.bind(props.store)} />}/>
-                <Route path = '/news' render={() => <News />}/>
-                <Route path = '/music' render={() => <Music />}/>
-                <Route path = '/settings' render={() => <Settings />}/>
+            <div className='app-wrapper'>
+                <Header/>
+                <Navbar/>
+                <div className='app-wrapper-content'>
+                    <Route path='/dialogs' render={() => <Dialogs state={props.state.dialogsPage}/>}/>
+                    <Route path='/profile' render={() => <Profile
+                        profilePage={props.state.profilePage}
+                        dispatch={props.dispatch}
+                    />}/>
+                    <Route path='/news' render={() => <News/>}/>
+                    <Route path='/music' render={() => <Music/>}/>
+                    <Route path='/settings' render={() => <Settings/>}/>
+                </div>
             </div>
-        </div>
         </BrowserRouter>
     );
 }
