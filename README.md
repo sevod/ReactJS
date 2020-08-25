@@ -6,7 +6,12 @@ https://www.youtube.com/watch?v=gb7gMluAeao&list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWh
 
 **Установка React** 
 
+```
 https://github.com/facebook/create-react-app
+nmp create-react-app nameApp
+```
+
+
 
  `<BrowserRouter>` импортируется с помощью `import {BrowserRouter, Route} from "react-router-dom";` 
  
@@ -252,3 +257,11 @@ Lightshot для скринов.
 Action - Это объект!
 
 Переносим все в state.js
+
+**Урок 40**
+
+Все повторяем и в Dialogs.jsx добавляем добавление сообщений и весь код для этого. По сути повторение.
+
+Когда мы в `<textarea onChange={onMessageChange} />` вызываем событие `onChange` то в нашу функцию `onMessageChange` передается объект event из которого можно много чего достать.
+
+`let text = event.target.value;`
