@@ -254,7 +254,7 @@ Lightshot для скринов.
 
 Создаем ActionCreator в MyPosts.jsx.
 
-Action - Это объект!
+`Action` - Это объект, у которого как минимум есть свойство `type`. Action передается в dispatche в качестве параметра.
 
 Переносим все в state.js
 
@@ -265,3 +265,19 @@ Action - Это объект!
 Когда мы в `<textarea onChange={onMessageChange} />` вызываем событие `onChange` то в нашу функцию `onMessageChange` передается объект event из которого можно много чего достать.
 
 `let text = event.target.value;`
+
+**26.082020**
+-----------------
+
+**Урок 41**
+
+`Reducer'ы`
+
+reducer это специальная функция, принимает state (не весь, а часть) и action, применяет action к state'у и возвращает новый state.
+
+В папке redux создаем файлы reducer.
+
+Рефакторим dispatch в state.js, переносим код в reducer ы
+
+
+
