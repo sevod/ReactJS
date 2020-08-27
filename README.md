@@ -321,3 +321,23 @@ let store = createStore(reducers);
 Тоже самое делаем с Dialogs.jsx
 
 В конце видео упомянули о "Контекст", компонента которая доступна всему дочернему дереву.
+
+**Урок 44**
+
+`Контекст`
+
+`React.createContext(defaultValue);`
+
+Создаем файл StoreContext.js (в будущем удалим)
+
+`const StoreContext = React.createContext(null);`
+
+В index.js `App` обрамляем  `<StoreContext.Provider value={store}>`. Теперь всему что внутри будет доступен Context.
+
+В компонентах где нужны данные используем <StoreContext.Consumer>. Файлы MyPostContainer.jsx и DialogsContainer.jsx
+
+<StoreContext.Consumer> после этого должны быть фигурные скобки с НОВОЙ СТРОКИ!!! JS!
+
+
+
+
