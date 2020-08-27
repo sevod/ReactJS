@@ -266,7 +266,7 @@ Lightshot для скринов.
 
 `let text = event.target.value;`
 
-**26.082020**
+**26.08.2020**
 -----------------
 
 **Урок 41**
@@ -278,6 +278,32 @@ reducer это специальная функция, принимает state (
 В папке redux создаем файлы reducer.
 
 Рефакторим dispatch в state.js, переносим код в reducer ы
+
+**27.08.2020**
+---------------------------
+**Урок 42**
+
+`REDUX`
+
+`npm install redux --save` - Устанавливаем redux 
+
+создаем файл redux-store.js. Теперь store будет там.
+
+создаем сам store.
+
+`let store = createStore();`
+
+
+подключаем reducerы и передаем их в store
+```
+let reducers = combineReducers({
+    profileReducer,
+    sidebarReducer,
+    dialogsReducer
+});
+
+let store = createStore(reducers);
+```
 
 
 
