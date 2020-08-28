@@ -381,6 +381,11 @@ let DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs);
 
 Рассказ о том как копирются обьекты. Кода нет.
 
+**Урок 47**
+
+Убираем из index.js `store.subscribe` Этим теперь будет заниматься connect. В ней есть свой локальный subscribe.
+Переписываем redeser'ы. Теперь из них возвращаем новые объекты, а не те же самые.
+
 
 
 
