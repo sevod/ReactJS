@@ -377,7 +377,9 @@ let mapDispatchToProps = (dispatch) => {
 let DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs);
 ```
 
+**Урок 46**
 
+Рассказ о том как копирются обьекты. Кода нет.
 
 
 
