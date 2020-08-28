@@ -386,7 +386,6 @@ let DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs);
 Убираем из index.js `store.subscribe` Этим теперь будет заниматься connect. В ней есть свой локальный subscribe.
 Переписываем redeser'ы. Теперь из них возвращаем новые объекты, а не те же самые.
 
+**Урок 48**
 
-
-
-
+Рефакторим reduser'ы
