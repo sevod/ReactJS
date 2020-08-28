@@ -338,6 +338,48 @@ let store = createStore(reducers);
 
 <StoreContext.Consumer> после этого должны быть фигурные скобки с НОВОЙ СТРОКИ!!! JS!
 
+**28.08.2020**
+--------------------------
+**Урок 45**
+
+`REACT-REDUX`
+
+npm install react-redux --save
+
+Удаляем StoreContext.js из предыдущего урока 
+
+В index.js обворачиваем App библиотекой react-redux, теперь у нас везде будут доступны дополнительные функции.
+```
+<Provider store={store}>
+    <App />
+</Provider>
+```
+В DialogsContainer.jsx вызываем функцию `connect()()` из библиотеки react-redux, она создает нам новую контейнерную компоненту, куда помещаем презентационную компоненту Dialogs.
+mapStateToProps и mapDispatchToProps функции в которых определяем данные и колбэк функции и передаем все это в нашу презентационную компоненту.
+```
+let mapStateToProps = (state) => {
+    return {
+        dialogs: state.dialogs,
+        messagesData: state.messagesData
+    }
+}
+
+let mapDispatchToProps = (dispatch) => {
+    return {
+        updateNewMessageBody: (body) =>{
+            dispatch(updateNewMessageTextActionCreator(body));
+            },
+        sendMessage: () => {
+            dispatch(addMessageActionCreator());
+        }
+    }
+}
+let DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs);
+```
+
+
+
+
 
 
 
