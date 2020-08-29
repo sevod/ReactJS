@@ -1,44 +1,21 @@
 import React from "react";
 import styles from './users.module.css'
-import {followAC, unFollowAC} from "../../redux/users-reducer";
+import * as axios from "axios";
+import userPhoto from '../../../src/assets/images/user.png'
+
 
 const Users = (props) => {
     if (props.users.length === 0) {
-        props.setUsers(
-            [
-                {
-                    id: 1,
-                    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Dmitry_Nagiev_2017_4.jpg/392px-Dmitry_Nagiev_2017_4.jpg',
-                    followed: false,
-                    fullName: 'Dmitry',
-                    status: 'I am a boss',
-                    location: {city: 'Minsk', country: 'Belarus'}
-                },
-                {
-                    id: 2,
-                    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Dmitry_Nagiev_2017_4.jpg/392px-Dmitry_Nagiev_2017_4.jpg',
-                    followed: true,
-                    fullName: 'Sasha',
-                    status: 'I am a boss',
-                    location: {city: 'Moscow', country: 'Russia'}
-                },
-                {
-                    id: 3,
-                    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Dmitry_Nagiev_2017_4.jpg/392px-Dmitry_Nagiev_2017_4.jpg',
-                    followed: false,
-                    fullName: 'Andrew',
-                    status: 'I am a boss',
-                    location: {city: 'Kiev', country: 'Ukraine'}
-                }
-            ]
-        )
+        axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
+            props.setUsers(response.data.items);
+        });
     }
     return <div>
         {
             props.users.map(users => <div key={users.id}>
                 <span>
                     <div>
-                        <img src={users.photoUrl} className={styles.userPhoto}/>
+                        <img src={users.photos.small != null ? users.photos.small : userPhoto} className={styles.userPhoto}/>
                     </div>
                     <div>
                         {users.followed ?
@@ -48,11 +25,11 @@ const Users = (props) => {
                 </span>
                 <span>
                     <span>
-                        <div>{users.fullName}</div><div>{users.status}</div>
+                        <div>{users.name}</div><div>{users.status}</div>
                     </span>
                     <span>
-                        <div>{users.location.country}</div>
-                        <div>{users.location.city}</div>
+                        <div>{"users.location.country"}</div>
+                        <div>{"users.location.city"}</div>
                     </span>
                 </span>
             </div>)

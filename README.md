@@ -406,3 +406,21 @@ Babel - это транспилятор jsx в js
 **Урок 50**
 
 Общие обьяснения об CRUD. Кода нет.
+
+**Урок 51**
+
+Устанавливаем библиотеку axios для связи с сервером
+```
+npm install axios --save
+```
+В users.jsx пишем get запрос для получения пользователей.
+
+Существуют так называемы json online viewer
+ 
+Пишем в users.jsx get запрос и ответ помещаем в users
+```
+axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
+            props.setUsers(response.data.items);
+            debugger;
+        });
+```
