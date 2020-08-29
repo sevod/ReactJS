@@ -389,3 +389,16 @@ let DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs);
 **Урок 48**
 
 Рефакторим reduser'ы
+
+**29.08.2020**
+--------------------
+
+**Урок 49**
+
+Объяснение jsx, Babel
+
+Babel - это транспилятор jsx в js
+
+Создаем страницу users и все что для нее надо.
+
+Упоенается DDD домен драйвинг дизайн
