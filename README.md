@@ -441,3 +441,12 @@ Side Effect
 Класс обязательно наследуюется от `React.Component`
 
 `class Users extends React.Component`
+
+**Урок 54**
+
+Жизненный цикл классовой компоненты.
+
+componentDidMount() компонента была вмонтирована (вставлена в html и отрисована)
+componentDidUpdate() компонента была обновлена    
+
+рефаторим users.js используем `componentDidMount()` 
