@@ -450,3 +450,10 @@ componentDidMount() компонента была вмонтирована (вс
 componentDidUpdate() компонента была обновлена    
 
 рефаторим users.js используем `componentDidMount()` 
+
+**Урок 55**
+
+Pagenation
+
+Правим users.jsx
+
