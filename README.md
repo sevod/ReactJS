@@ -428,3 +428,16 @@ axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response =>
 **Урок 52**
 
 Side Effect
+
+**30.08.2020**
+---------------
+
+**Урок 53**
+
+Классовые компоненты
+
+Рефакторим Users, делаем из `функциональной`, `классовую` компоненту. 
+
+Класс обязательно наследуюется от `React.Component`
+
+`class Users extends React.Component`
