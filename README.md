@@ -491,3 +491,21 @@ let user = {
 }
 ```
 Переименовыем AC, убирая это окончание и упрощаем код еще.
+
+**Урок 59**
+
+На странице Users.jsx оборачиваем аватарку в `<NavLink to={'/profile/' + users.id}>`. Она будет вести на страницу пользователя.
+
+Query Parameters - через ? знак.
+
+URI параметры - как часть адреса.
+
+Для данного урока в API:
+```
+URI Parameters
+userId: required(integer)
+```
+
+Создаем ProfileContainer.jsx.
+
+Так `<Profile {...this.props}/>` мы пробрасываем пришедшие пропсы дальше.
