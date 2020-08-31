@@ -525,5 +525,13 @@ WithRouter
 `<Route path='/profile/:userId?' render={() => <ProfileContainer />}/>`
 
 Теперь в match будет userId. Знак ? в конце, означает что этот параметр не обязательный.
+
+**Урок 61**
+
+Делаем отображение логина на сервер.
+
+Создаем auth-reducer.js и HeaderContainer.js
+
+
  
  
