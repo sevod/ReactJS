@@ -2,11 +2,18 @@
     grid-area: c;
     background-color: rgb(81, 81, 85);
   }
-  
-.content img{
+
+
+.face{
+    width: 200px;
+    height: 200px;
+}
+
+.top{
     width: 800px;
     height: 100px;
 }
+
 .description_block{
     padding: 10px;
 }

@@ -509,3 +509,21 @@ userId: required(integer)
 Создаем ProfileContainer.jsx.
 
 Так `<Profile {...this.props}/>` мы пробрасываем пришедшие пропсы дальше.
+
+**Урок 60**
+
+WithRouter
+
+`withRouter(ProfileContainer)` получаем данные из URL 
+
+в файле ProfileContainer.jsx с помощью `withRouter(ProfileContainer)` обернем ProfileContainer. Таким образом мы сможем передать туда URL.
+
+Теперь в props есть match но он пустой.
+
+Меняем строку в App.js
+
+`<Route path='/profile/:userId?' render={() => <ProfileContainer />}/>`
+
+Теперь в match будет userId. Знак ? в конце, означает что этот параметр не обязательный.
+ 
+ 

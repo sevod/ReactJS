@@ -1,17 +1,15 @@
 import React from 'react';
 import Preloader from "../../common/preloader/Preloader";
+import s from './ProfileInfo.module.css'
 
 const ProfileInfo = (props) => {
-    if (!props.profile){
-        return <Preloader/>
-    }else
-        return (
+    return (
         <div>
             <div>
-                <img src='https://gazeta.spb.ru/wp-content/uploads/2019/06/beach-2179624_960_720.jpg'/>
+                <img className={s.top} src='https://gazeta.spb.ru/wp-content/uploads/2019/06/beach-2179624_960_720.jpg'/>
             </div>
             <div>
-                <img src={props.profile.photos.large} />
+                <img className={s.face} src={props.profile.photos.large} />
             </div>
         </div>
     );
