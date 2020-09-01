@@ -575,6 +575,7 @@ DAL - dialog access layer
 Создаем папку api, в ней api.js и выносим туда функцию axios.get
 
 Выучить promise!
+Promise (промис) используется для отложенных и асинхронных вычислений.
 
 Создаем `instance = axios.create(...` внутрь помещаем наши базовые настройки axios что бы не повторять их в коде
 
@@ -602,7 +603,7 @@ thunk (преобразователь)
 ```
 const f1 = (message) => (dispatch) => {
     //это уже f2, но мы можем получить message
-        {message}
+        message
     }
     ...then(() => {
         //а это уже снова f1! (наверное, в следующей лекции узнаю) Ё js
@@ -612,3 +613,19 @@ const f1 = (message) => (dispatch) => {
 ```
 
 store не умеет принимать в качестве dispath функцию, поэтому используем "мидл веар" он же "thunk mw" который будет "фильтрофать" thunk`и
+
+**Урок 66**
+
+В users-reducer создаем thunk и оборачиваем его getUsersThunkCreator
+
+Устанавливаем npm install redux-thunk
+yarn можно исползовать вместо npm 
+
+Импортируем в redux-store.js `import {thunk as thunkMiddleware} from "redux-thunk";`
+В redux-store.js меняем код, добавляем applyMiddleware()
+
+`let store = createStore(reducers, applyMiddleware());`
+
+Используем `getUsersThunkCreator` в `UsersContainer.jsx`
+
+Рефакторим Users.jsx

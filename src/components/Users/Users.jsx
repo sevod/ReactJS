@@ -3,6 +3,7 @@ import styles from "./users.module.css";
 import userPhoto from "../../assets/images/user.png";
 import {NavLink} from "react-router-dom";
 import {usersAPI} from "../../api/api";
+import {followThunkCreator, unFollowThunkCreator} from "../../redux/users-reducer";
 
 let Users = (props) => {
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -31,26 +32,14 @@ let Users = (props) => {
                     </div>
                     <div>
                         {users.followed ?
-                            <button disabled={props.followingInProgress.some(id => id === users.id)} onClick={() => {
-                                debugger;
-                                props.toggleFollowingInProgress(true, users.id);
-                                usersAPI.getUnfollow(users.id).then(data => {
-                                    if (data.resultCode == 0) {
-                                        props.unFollow(users.id)
-                                    }
-                                    props.toggleFollowingInProgress(false, users.id);
-
-                                });
-                            }}>Unfollow</button>
-                            : <button disabled={props.followingInProgress.some(id => id === users.id)} onClick={() => {
-                                props.toggleFollowingInProgress(true, users.id);
-                                usersAPI.getFollow(users.id).then(data => {
-                                    if (data.resultCode == 0) {
-                                        props.follow(users.id);
-                                    }
-                                    props.toggleFollowingInProgress(false, users.id);
-                                });
-                            }}>Follow</button>}
+                            <button disabled={props.followingInProgress.some(id => id === users.id)}
+                                    onClick={() => {
+                                        props.unFollowThunkCreator(users.id);
+                                    }}>Unfollow</button>
+                            : <button disabled={props.followingInProgress.some(id => id === users.id)}
+                                      onClick={() => {
+                                          props.followThunkCreator(users.id);
+                                      }}>Follow</button>}
                     </div>
                 </span>
                     <span>
