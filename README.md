@@ -577,3 +577,17 @@ DAL - dialog access layer
 Выучить promise!
 
 Создаем `instance = axios.create(...` внутрь помещаем наши базовые настройки axios что бы не повторять их в коде
+
+**Урок 64**
+
+Будем блокировать многократное нажатие follow unfollow
+
+Правим users-reduser.js
+
+Для блокировки кнопки используем следующую конструкцию 
+
+`<button disabled={props.followingInProgress.some(id => id === users.id)} onClick={() => {...`
+
+одна из функций работы с массивами. добавляем (...) в массив все что проходит фильтр. по факту удаляем с определенным id
+
+`...state.followingInProgress.filter(userId => userId != action.userId)`
