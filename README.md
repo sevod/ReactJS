@@ -531,7 +531,39 @@ WithRouter
 Делаем отображение логина на сервер.
 
 Создаем auth-reducer.js и HeaderContainer.js
+```
+axios.get(`https://social-network.samuraijs.com/api/1.0/auth/me`, {withCredentials: true}).then(response => {
+            
+        });
+```
+
+`withCredentials: true ` важный параметр, разрешающий браузеру переадресовывать запросы на другой URL
 
 
- 
- 
+**01.09.2020**
+----------------
+
+**Урок 62**
+
+Follow Unfollow, Post запрос
+
+Работаем в Users.jsx
+
+`axios.post` - пост запрос
+
+Follow запрос
+```
+axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${users.id}`, {}, {withCredentials: true})
+            .then(response => {}});
+```
+
+Unfollow запрос
+
+ ```
+ axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${users.id}`, {withCredentials: true})
+            .then(response => {}});
+```
+
+Обращаем внимание `withCredentials` идет разным по счету параметром!
+
+Так же добавляем `withCredentials` в Users

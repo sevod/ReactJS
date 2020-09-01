@@ -4,7 +4,6 @@ import {NavLink} from "react-router-dom";
 
 
 const Header = (props) => {
-    debugger;
     return (
         <header className = {s.header}>
         <img src = 'https://upload.wikimedia.org/wikipedia/ru/b/b7/Discord_logo_svg.svg'/>
