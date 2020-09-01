@@ -567,3 +567,13 @@ Unfollow запрос
 Обращаем внимание `withCredentials` идет разным по счету параметром!
 
 Так же добавляем `withCredentials` в Users
+
+**Урок 63**
+
+DAL - dialog access layer
+
+Создаем папку api, в ней api.js и выносим туда функцию axios.get
+
+Выучить promise!
+
+Создаем `instance = axios.create(...` внутрь помещаем наши базовые настройки axios что бы не повторять их в коде
