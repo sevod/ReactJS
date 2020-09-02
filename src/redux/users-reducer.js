@@ -109,7 +109,6 @@ export const unFollowThunkCreator = (usersId) => {
                 dispath(unFollowSuccess(usersId))
             }
             dispath(toggleFollowingInProgress(false, usersId));
-
         });
     }
 }

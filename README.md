@@ -3,6 +3,8 @@
 ------------------------------------
 https://www.youtube.com/watch?v=gb7gMluAeao&list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8&index=1
 
+https://app.mindmup.com/map/_free/2020/09/9bb94330ec9a11ea942d2925b1743b8e
+
 
 **Установка React** 
 
@@ -516,7 +518,7 @@ WithRouter
 
 `withRouter(ProfileContainer)` получаем данные из URL 
 
-в файле ProfileContainer.jsx с помощью `withRouter(ProfileContainer)` обернем ProfileContainer. Таким образом мы сможем передать туда URL.
+в файле ProfileContainer.jsx с помощью `withRouter(ProfileContainer)` обернем ProfileContainer. Таким образом мы сможем передать туда URL текущей страницы.
 
 Теперь в props есть match но он пустой.
 
@@ -629,3 +631,15 @@ yarn можно исползовать вместо npm
 Используем `getUsersThunkCreator` в `UsersContainer.jsx`
 
 Рефакторим Users.jsx
+
+**02.09.2020**
+----------------------
+
+**Урок 67**
+
+Продолжаем применять thunk.
+
+Рефакторим ProfileContainer.jsx. Переносим все api.js.
+
+Так же рефакторим HeaderContainer.js, auth-reducer.js
+
