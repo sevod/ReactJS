@@ -661,3 +661,11 @@ if (!props.action)
     return <Redirect to={"/login"} />;
 
 ```
+
+**Урок 69**
+
+High Order Component (HOC ХОК)
+
+создаем withAuthRedirect.js, это наш ХОК для редиректа. Дополнительно наш хок (внутри) оборачиваем в connect, что бы получить state.
+
+наименование хоков начинаем на with
