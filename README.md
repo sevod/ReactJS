@@ -643,3 +643,21 @@ yarn можно исползовать вместо npm
 
 Так же рефакторим HeaderContainer.js, auth-reducer.js
 
+**Урок 68**
+
+Редирект Redirect
+
+Делаем редирект на login когда не залогинены
+
+Информацию о том залогинены мы или нет мы берем из auth-reducer'а
+
+Правим DialogsContainer, Dialogs
+
+Сам редирект.
+```
+import {Redirect} from "react-router-dom";
+
+if (!props.action)
+    return <Redirect to={"/login"} />;
+
+```
