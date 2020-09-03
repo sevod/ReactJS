@@ -13,6 +13,7 @@ import {
 import {getUsers, usersAPI} from "../../api/api";
 import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 import Dialogs from "../Dialogs/Dialogs";
+import {compose} from "redux";
 
 
 class UsersContainer extends React.Component {
@@ -53,8 +54,11 @@ let mapStateToProps = (state) => {
     }
 }
 
-let AuthRedirectComponent = withAuthRedirect(UsersContainer);
+export default  compose(
+    connect(mapStateToProps,
+        {setCurrentPage, toggleFollowingInProgress, getUsersThunkCreator, followThunkCreator, unFollowThunkCreator}),
+    withAuthRedirect)(UsersContainer);
 
-export default connect(mapStateToProps,
-    {setCurrentPage, toggleFollowingInProgress, getUsersThunkCreator, followThunkCreator, unFollowThunkCreator}
-)(AuthRedirectComponent);
+// export default connect(mapStateToProps,
+//     {setCurrentPage, toggleFollowingInProgress, getUsersThunkCreator, followThunkCreator, unFollowThunkCreator}
+// )(AuthRedirectComponent);
