@@ -1,9 +1,9 @@
-import {usersAPI} from "../api/api";
-import {followSuccess, toggleFollowingInProgress} from "./users-reducer";
+import {profileAPI, usersAPI} from "../api/api";
 
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const SET_USER_PROFILE = 'SET_USER_PROFILE';
+const SET_STATUS = 'SET_STATUS';
 
 let initialState = {
     postData: [
@@ -13,7 +13,8 @@ let initialState = {
         {id: 4, message: 'Yo!', likesCount: 0}
     ],
     newPostText: 'it-kamasutra.com',
-    profile: null
+    profile: null,
+    status: "no status"
 };
 
 const profileReducer = (state = initialState, action) => {
@@ -37,12 +38,19 @@ const profileReducer = (state = initialState, action) => {
                 profile: action.profile
             };
         }
+        case SET_STATUS :{
+            return {
+                ...state,
+                status: action.status
+            };
+        }
         default:
             return state;
     }
 }
 
 export const addPostActionCreator = () => ({type: ADD_POST});
+export const setStatus = (status) => ({type: SET_STATUS, status});
 export const updateNewPostTextActionCreator = (text = initialState.newPostText) => ({
     type: UPDATE_NEW_POST_TEXT,
     newText: text
@@ -56,5 +64,21 @@ export const getUserProfileThunkCreator = (userId) => {
     }
 }
 
+export const getUserStatusThunkCreator = (userID) => {
+    return (dispatch) => {
+        profileAPI.getStatus(userID).then(
+            response => {
+                dispatch(setStatus(response))});
+    }
+}
 
+export const updateStatusThunkCreator = (status) => {
+    return (dispatch) => {
+        profileAPI.updateStatus(status).then(
+            response => {
+                if (response.data.resultCode === 0)
+                    dispatch(setStatus(status))
+            });
+    }
+}
 export default profileReducer;
