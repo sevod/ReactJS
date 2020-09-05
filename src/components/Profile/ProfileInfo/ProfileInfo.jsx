@@ -3,6 +3,7 @@ import s from './ProfileInfo.module.css'
 import ProfileStatus from './ProfileStatus.jsx'
 
 const ProfileInfo = (props) => {
+    debugger;
     return (
         <div>
             {/*<div>*/}
