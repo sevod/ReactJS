@@ -732,7 +732,7 @@ console.warn('Obsolete method. Please profileAPI object.')
 **05.09.2020**
 --------------------------
 
-**Урок 73**
+**Урок 74**
 
 Правим предыдущий урок.
 
@@ -748,3 +748,36 @@ this.setState({
 
 Все работает, но все не как у димыча.
 
+**Урок 75 redux-form**
+
+Пример и обьяснение всей темы https://redux-form.com/8.3.0/docs/gettingstarted.md/
+
+Библиотека redux-form. Добавляет в глобальный  стейт свой редюсер.
+ `import { reducer as formReducer } from 'redux-form'` Создает свой hoc. https://redux-form.com/8.3.0/docs/gettingstarted.md/
+
+В Login.jsx делаем форму логина
+
+`npm install redux-form` устанавливаем библиотеку redux-form
+
+на страницу resux-store.js добавляем редюсер и обязательно называем `form: formReducer`. Название form принципиально.
+
+Из документации:
+
+`NOTE: The key used to pass the redux-form reducer should be named form. If you need a custom key for some reason see getFormState config for more details.`
+
+Для использования мы должны будем нашу форму, обвернуть новой компонентой.
+```
+const LoginReduxForm = reduxForm({
+    // a unique name for the form
+    form: 'login'
+})(LoginForm)
+```
+
+Далее мы начинаем использовать специальные компоненты из новой библиотеки `<Field/>`
+
+После нажатия кнопки, все данные находятся в `store.getState().form...`
+
+Правим поле `<form onSubmit={props.handleSubmit}>` перезагрузки страницы больше нет
+
+Правим `<LoginReduxForm onSubmit={onSubmit}/>` и каким то чудом сюда возвращаются данные от сабмита с формы, 
+которые мы потом можем использовать для отправки на сервер.
