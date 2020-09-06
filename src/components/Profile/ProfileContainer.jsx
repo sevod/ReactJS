@@ -21,7 +21,6 @@ class ProfileContainer extends React.Component {
 
 
     render() {
-        debugger;
         return (
             <Profile profile={this.props.profile} status = {this.props.status} updateStatus = {this.props.updateStatusThunkCreator}/>
         )

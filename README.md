@@ -781,3 +781,14 @@ const LoginReduxForm = reduxForm({
 
 Правим `<LoginReduxForm onSubmit={onSubmit}/>` и каким то чудом сюда возвращаются данные от сабмита с формы, 
 которые мы потом можем использовать для отправки на сервер.
+
+**06.09.2020**
+----------------------
+
+**Урок 76**
+
+Продолжаем изучать redux-form.
+
+Рефакторим Dialogs.jsx. В dialogs-reducer.js удаляем метод updateNewMessageTextActionCreator и всю цепочку
+
+Повторяем все с постами. MyPost.jsx и всю цепочку до редюсера.

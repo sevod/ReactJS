@@ -2,9 +2,10 @@ import React from "react";
 import s from './Dialogs.module.css'
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
+import {Field, reduxForm} from "redux-form";
 
 const Dialogs = (props) => {
-     let dialogsElements = props.dialogs.map
+    let dialogsElements = props.dialogs.map
     (
         dialogs => (<DialogItem name={dialogs.name} key={dialogs.id} id={dialogs.id}/>)
     );
@@ -13,14 +14,9 @@ const Dialogs = (props) => {
         messagesData => (<Message message={messagesData.message} key={messagesData.id}/>)
     );
 
-    let onSendMessageClick = () => {
-        props.sendMessage();
-    };
-
-    let onNewMessageChange = (event) => {
-        let body = event.target.value;
-        props.updateNewMessageBody(body);
-    };
+    const addNewMessage = (value) => {
+        props.sendMessage(value.newMessageBody);
+    }
 
     return (
         <div>
@@ -31,17 +27,24 @@ const Dialogs = (props) => {
                 <div className={s.messages}>
                     {messagesElements}
                 </div>
-                <div>
-                    <div>
-                        <textarea onChange={onNewMessageChange} value={props.newMessageBody} placeholder='Enter your message'/>
-                    </div>
-                    <div>
-                        <button onClick={onSendMessageClick}>Add message</button>
-                    </div>
-                </div>
+                    <AddMessageFormRedux onSubmit={addNewMessage}/>
             </div>
         </div>
     );
 }
+
+const AddMessageForm = (props) => {
+    return (
+        <form onSubmit={props.handleSubmit}>
+            <div>
+                <Field component={'textarea'} name={'newMessageBody'} placeholder={'Enter your message'} />
+            </div>
+            <div>
+                <Field component={'button'}>Add message</Field>
+            </div>
+        </form>)
+}
+
+const AddMessageFormRedux = reduxForm({form: 'dialogAddMessageForm'})(AddMessageForm);
 
 export default Dialogs;
