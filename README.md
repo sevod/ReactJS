@@ -792,3 +792,25 @@ const LoginReduxForm = reduxForm({
 Рефакторим Dialogs.jsx. В dialogs-reducer.js удаляем метод updateNewMessageTextActionCreator и всю цепочку
 
 Повторяем все с постами. MyPost.jsx и всю цепочку до редюсера.
+
+**Урок 77**
+
+Делаем валидация на redux-form.
+
+В документации https://redux-form.com/8.3.0/examples/fieldlevelvalidation/
+
+Создаем папки utils -> validators и файл validators.js
+
+Создаем "красивый" textarea. Создаем папку FormsControls и FormsContlols.jsx и FormsControls.module.css
+
+Повторяем все с Dialogs.jsx (AddMessageForm) 
+
+Далее идем в Login.jsx
+
+
+
+Деструкторизация, рест оператор. Это гуглить по js
+
+
+
+
