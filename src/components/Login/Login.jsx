@@ -5,6 +5,8 @@ import {required} from "../../utils/validators/validators";
 import {connect} from "react-redux";
 import {loginThunk} from "../../redux/auth-reducer";
 import {Redirect} from "react-router-dom";
+import style from '../common/FormsControls/FormsControls.module.css'
+
 
 const LoginForm = (props) => {
     return (
@@ -19,6 +21,11 @@ const LoginForm = (props) => {
             <div>
                 <Field component={Input} type={"checkbox"} name={"rememberMe"}/> remember me
             </div>
+            {props.error &&
+            <div className={style.formSummaryError}>
+                {props.error}
+            </div>
+            }
             <div>
                 <button>Login</button>
             </div>
@@ -37,7 +44,6 @@ const Login = (props) => {
         props.loginThunk(formData.email, formData.password, formData.rememberMe);
     }
 
-    debugger;
     if (props.isAuth) {
         return <Redirect to={"/profile"}/>
     }

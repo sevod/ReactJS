@@ -824,6 +824,15 @@ const LoginReduxForm = reduxForm({
 
 Правим Login.jsx.
 
+**Урок 79**
+
+Создаем ошибку при не правильном логине
+
+Правим auth-reducer.js. loginThunk. Используем `stopSubmit("login", {_error: "Email or password is wrong"})` из redux-form. Правим Login.jsx форм.
+
+Так же правим ProfileContainer.jsx
+
+
 
 
 
