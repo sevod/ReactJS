@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {Route} from "react-router-dom";
+import {Route, withRouter} from "react-router-dom";
 import Navbar from './components/Navbar/Navbar';
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
@@ -10,24 +10,47 @@ import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
+import {connect} from "react-redux";
+import {getAuthUserThunk} from "./redux/auth-reducer";
+import Preloader from "./components/common/preloader/Preloader";
 
-const App = () => {
-    return (
-            <div className='app-wrapper'>
-                <HeaderContainer/>
-                <Navbar/>
-                <div className='app-wrapper-content'>
-                    <Route path='/profile/:userId?' render={() => <ProfileContainer />}/>
-                    <Route path='/dialogs' render={() => <DialogsContainer /> }/>
+class App extends React.Component {
 
-                    <Route path='/users' render={() => <UsersContainer />}/>
+    componentDidMount() {
+        this.props.getAuthUserThunk();
+    }
 
-                    <Route path='/news' render={() => <News/>}/>
-                    <Route path='/music' render={() => <Music/>}/>
-                    <Route path='/settings' render={() => <Settings/>}/>
-                    <Route path='/login' render={() => <Login/>}/>
+    // static getDerivedStateFromProps(props, state) {
+    //     props.getAuthUserThunk();
+    // }
+
+    render() {
+        if (!this.props.initialized) {
+            debugger;
+            return <Preloader/>;
+        } else
+            return (
+                <div className='app-wrapper'>
+                    <HeaderContainer/>
+                    <Navbar/>
+                    <div className='app-wrapper-content'>
+                        <Route path='/profile/:userId?' render={() => <ProfileContainer/>}/>
+                        <Route path='/dialogs' render={() => <DialogsContainer/>}/>
+
+                        <Route path='/users' render={() => <UsersContainer/>}/>
+
+                        <Route path='/news' render={() => <News/>}/>
+                        <Route path='/music' render={() => <Music/>}/>
+                        <Route path='/settings' render={() => <Settings/>}/>
+                        <Route path='/login' render={() => <Login/>}/>
+                    </div>
                 </div>
-            </div>
-    );
+            );
+    }
 }
-export default App;
+
+const mapStateToProps = (state) => ({
+    initialized: state.auth.initialized
+})
+
+export default connect(mapStateToProps, {getAuthUserThunk})(App);

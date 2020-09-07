@@ -7,7 +7,8 @@ let initialState = {
     id: null,
     email: null,
     login: null,
-    isAuth: false
+    isAuth: false,
+    initialized: false
 };
 
 const authReducer = (state = initialState, action) => {
@@ -16,7 +17,8 @@ const authReducer = (state = initialState, action) => {
             return {
                 ...state,
                 ...action.payload,
-                isAuth: action.payload.isAuth
+                isAuth: action.payload.isAuth,
+                initialized: true
             }
         }
         default:
@@ -32,6 +34,8 @@ export const getAuthUserThunk = () => {
                 if (data.resultCode === 0) {
                     let {id, email, login} = data.data;
                     dispatch(setAuthUserData(id, email, login, true));
+                } else {
+                    dispatch(setAuthUserData(null, null, null, false));
                 }
             }
         )

@@ -832,6 +832,12 @@ const LoginReduxForm = reduxForm({
 
 Так же правим ProfileContainer.jsx
 
+**Урок 80**
+
+Рефакторим авторизацию, переносим ее c Header в App.js.
+
+Делаем редирект в ProfileContainer.jsx на логин.
+
 
 
 
