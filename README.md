@@ -811,6 +811,20 @@ const LoginReduxForm = reduxForm({
 
 Деструкторизация, рест оператор. Это гуглить по js
 
+**07.09.2020**
+-------------------
+
+**Урок 78**
+
+Логин и логаут
+
+В auth-reducer.js создаем loginThunk и logoutThunk
+
+В api.js создаем методы login и logout
+
+Правим Login.jsx.
+
+
 
 
 
