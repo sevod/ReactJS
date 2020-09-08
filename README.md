@@ -845,9 +845,46 @@ const LoginReduxForm = reduxForm({
 
 Селекторы. Это промежуточный слой для получения данных. Селектор берет все из стейта и возвращает в UI только то что нужно.
 
-Рефакторим в UsersContainer.jsx mapStateToProps
+Рефакторим в UsersContainer.jsx mapStateToProps. Создаем файл users-selectors.js. Туда выносим все функции для получения данных.
 
 **Урок 82**
 
 Много теории не о чем.
+
+**Урок 83**
+
+Reselect это библиотека для Redux. 
+
+`npm install reselect`
+
+Реселект может контролировать mapStateToProps
+
+С помощью createSelector, создаем селектор. Все что внутри, будет запущено только при изменении getUsers. Сам getUsers срабатывает при любом измении стейта.
+```
+import {createSelector} from "reselect";
+
+export const getUsers = (state) => {
+    return state.usersPage.users;
+    //return state.usersPage.users.filter(u => true); //for test/lesson
+}
+
+export const getUsersSuperSelector = createSelector(getUsers,(users) => {
+    return users.filter(users => true);
+});
+```
+
+
+Для теста в index.js создаем
+```
+//for test/lesson
+setInterval(() => {
+     store.dispatch({type: "FAKE"});
+}, 1000);
+```
+
+в users-reducer.js фэйковый редюсер, который обновляет стейт. После этого видим как getUsers постоянно срабатывает, а getUsersSuperSelector, только при смене страниц
+
+
+
+
 

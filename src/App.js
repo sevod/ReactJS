@@ -20,13 +20,8 @@ class App extends React.Component {
         this.props.getAuthUserThunk();
     }
 
-    // static getDerivedStateFromProps(props, state) {
-    //     props.getAuthUserThunk();
-    // }
-
     render() {
         if (!this.props.initialized) {
-            debugger;
             return <Preloader/>;
         } else
             return (

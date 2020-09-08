@@ -7,6 +7,11 @@ import store from './redux/redux-store';
 import {BrowserRouter} from "react-router-dom";
 import {Provider} from "react-redux";
 
+//for test/lesson
+setInterval(() => {
+     store.dispatch({type: "FAKE"});
+}, 1000);
+
 ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>

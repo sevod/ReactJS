@@ -9,6 +9,7 @@ const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
 const TOGGLE_IS_FOLLOWING_PROGRESS = 'TOGGLE_IS_FOLLOWING_PROGRESS';
 
 
+
 let initialState = {
     users: [],
     pageSize: 10,
@@ -20,7 +21,17 @@ let initialState = {
 
 const usersReducer = (state = initialState, action) => {
     switch (action.type) {
-        case FOLLOW: {
+        case "FAKE": {
+            return {
+                ...state,
+                // users: state.users.map((user) => {
+                //     if (user.id === action.userId) {
+                //         return {...user, followed: true};
+                //     } else
+                //         return user;
+                // })
+            }
+        }case FOLLOW: {
             return {
                 ...state,
                 users: state.users.map((user) => {
