@@ -847,4 +847,7 @@ const LoginReduxForm = reduxForm({
 
 Рефакторим в UsersContainer.jsx mapStateToProps
 
+**Урок 82**
+
+Много теории не о чем.
 
