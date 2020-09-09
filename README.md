@@ -906,7 +906,17 @@ var a, b, rest;
  
  
  https://habr.com/ru/company/ruvds/blog/445276/ статья от Димыча
+ 
+**Урок 85**
 
+`useEffect` hook
+
+в этом примере useEffect будет обновлятся только когда будет меняться props.status
+```
+    useEffect(() => {
+        setStatus(props.status);
+    }, [props.status]);
+```
 
 
 
