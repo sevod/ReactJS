@@ -918,5 +918,14 @@ var a, b, rest;
     }, [props.status]);
 ```
 
+**Урок 86**
 
+Теоретический урок.
+
+VirtualDOM, 
+Reconciliation(Согласование https://ru.reactjs.org/docs/reconciliation.html)
+
+Транспилятор Babel
+
+babel react online
 
