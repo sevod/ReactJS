@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './ProfileInfo.module.css'
-import ProfileStatus from './ProfileStatus.jsx'
+import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 
 const ProfileInfo = (props) => {
     return (
@@ -10,7 +10,7 @@ const ProfileInfo = (props) => {
             {/*</div>*/}
             <div>
                 <img className={s.face} src={props.profile.photos.large} />
-                <ProfileStatus status ={props.status} updateStatus={props.updateStatus}/>
+                <ProfileStatusWithHooks status ={props.status} updateStatus={props.updateStatus}/>
             </div>
         </div>
     );
