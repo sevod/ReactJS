@@ -929,3 +929,26 @@ Reconciliation(Согласование https://ru.reactjs.org/docs/reconciliati
 
 babel react online
 
+**10.09.2020**
+-----------------------
+
+**Урок 87**
+
+shouldComponentUpdate, PureComponent, memo
+
+В MyPosts.jsx компоненту MyPosts переводим в классовую
+
+С помощью этого метода жизненного цикла, мы можем задавать перерисовывать или нет компоненту
+
+(у меня не заработало)
+
+```
+    shouldComponentUpdate(nextProps, nextState) {
+        return nextProps != this.props || nextState != this.state;
+    }
+
+```
+
+Что бы этого кода не писать можно использовать `React.PureComponent` тогда проверка будет автоматической.
+
+Что бы все подобное сделать с функциональной компонентой, можно копоненту обвернуть в `React.memo`
