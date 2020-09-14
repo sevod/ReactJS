@@ -1011,3 +1011,10 @@ async (dispatch) => {
 
 Создаем страницы Paginator.jsx и рефаторим Users.jsx. Так же создаем User.jsx.
 
+**Урок 91**
+
+Устанавливаем расширения для хрома для удобства работы
+
+React Developer Tools
+Redux DevTools
+
