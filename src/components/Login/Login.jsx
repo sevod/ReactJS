@@ -1,6 +1,6 @@
 import React from "react";
 import {Field, reduxForm} from "redux-form";
-import {Input, InputCheckbox} from "../common/FormsControls/FormsControls";
+import {Input} from "../common/FormsControls/FormsControls";
 import {required} from "../../utils/validators/validators";
 import {connect} from "react-redux";
 import {loginThunk} from "../../redux/auth-reducer";
@@ -8,9 +8,9 @@ import {Redirect} from "react-router-dom";
 import style from '../common/FormsControls/FormsControls.module.css'
 
 
-const LoginForm = (props) => {
+const LoginForm = ({handleSubmit, error}) => {
     return (
-        <form onSubmit={props.handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <div>
                 <Field component={Input} placeholder={"Login"} name={"email"} validate={[required]}/>
             </div>
@@ -21,9 +21,9 @@ const LoginForm = (props) => {
             <div>
                 <Field component={Input} type={"checkbox"} name={"rememberMe"}/> remember me
             </div>
-            {props.error &&
+            {error &&
             <div className={style.formSummaryError}>
-                {props.error}
+                {error}
             </div>
             }
             <div>

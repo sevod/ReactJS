@@ -21,11 +21,13 @@ import {
 
 class UsersContainer extends React.Component {
     componentDidMount() {
-        this.props.getUsersThunkCreator(this.props.currentPage, this.props.pageSize);
+        let {currentPage, pageSize} = this.props;
+        this.props.getUsersThunkCreator(currentPage, pageSize);
     }
 
     onPageChanged = (page) => {
-        this.props.getUsersThunkCreator(page, this.props.pageSize);
+        let pageSize = this.props.pageSize;
+        this.props.getUsersThunkCreator(page, pageSize);
         this.props.setCurrentPage(page);
     }
 
@@ -46,17 +48,6 @@ class UsersContainer extends React.Component {
     }
 }
 
-// let mapStateToProps = (state) => {
-//     return {
-//         users: state.usersPage.users,
-//         pageSize: state.usersPage.pageSize,
-//         totalUsersCount: state.usersPage.totalUsersCount,
-//         currentPage: state.usersPage.currentPage,
-//         isFetching: state.usersPage.isFetching,
-//         followingInProgress: state.usersPage.followingInProgress
-//     }
-// }
-
 let mapStateToProps = (state) => {
     return {
         //users: getUsers(state),
@@ -69,11 +60,6 @@ let mapStateToProps = (state) => {
     }
 }
 
-//
-// export default compose(
-//     connect(mapStateToProps,
-//         {setCurrentPage, toggleFollowingInProgress, getUsersThunkCreator, followThunkCreator, unFollowThunkCreator}),
-//     withAuthRedirect)(UsersContainer);
 export default compose(
     connect(mapStateToProps,
         {setCurrentPage, toggleFollowingInProgress, getUsersThunkCreator, followThunkCreator, unFollowThunkCreator}),

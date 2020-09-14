@@ -13,6 +13,8 @@ import Login from "./components/Login/Login";
 import {connect} from "react-redux";
 import {getAuthUserThunk} from "./redux/auth-reducer";
 import Preloader from "./components/common/preloader/Preloader";
+import {compose} from "redux";
+import {withAuthRedirect} from "./hoc/withAuthRedirect";
 
 class App extends React.Component {
 
@@ -47,5 +49,10 @@ class App extends React.Component {
 const mapStateToProps = (state) => ({
     initialized: state.auth.initialized
 })
+
+// export default compose(
+//     withRouter,
+//     connect(mapStateToProps, {getAuthUserThunk})(App)
+// );
 
 export default connect(mapStateToProps, {getAuthUserThunk})(App);

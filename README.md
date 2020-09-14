@@ -961,7 +961,7 @@ pure function чистая функция
 2. поскольку она ничего не меняет, она должна что то вернуть
 3. no side effects (нет сайд эффектов)
 4. determine... or idenbotens.. сколько раз на вход не пускаешь данные, всегда возврат одинаковый при одинаковых входных условиях
-
+``
 **11.09.2020**
 ---------------
 
@@ -969,8 +969,45 @@ pure function чистая функция
 
 работаем с тестами. 
 
+используем jest
+
 npm test start для запуска тестов в консоле
 
 создаем profile-reducer.test.js. Пишем там тесты для редюсера.
 
 TDD test driver development написание тестов на то чего еще нет.
+
+14.09.2020
+-------------
+
+**Урок 90**
+
+redux-ducks подход
+
+название констант в редюсарах делаем уникальными
+
+`const SET_USER_DATA = 'samurai-net/auth/SET_USER_DATA';`
+
+в файле auth-reducer.js конструкции `then` заменяем на `await`. await работает только в асинхронных функциях, поэтому используем async
+
+Общий смысл await. Внутри асинхронной функции (async) используем асинхронный вызов с await и помещаем его ответ в переменную response. Строка ниже будет дожидатся ответа, и отработает только после прихода результата. 
+
+```
+async (dispatch) => {
+    let response = await authAPI.me();
+    
+    if (response.resultCode === 0) {
+    ...}
+}
+```
+
+рефакторим profile-reducer.js, users-reducer.js
+
+создаем файл objects-helpers.js, туда выносим часть когда из users-reducer.js
+
+в Login.jsx применяем деструктуризацию параметров. Что бы везде не писать props, пишем следующее
+
+`const LoginForm = ({handleSubmit, error}) => { ...`
+
+Создаем страницы Paginator.jsx и рефаторим Users.jsx. Так же создаем User.jsx.
+

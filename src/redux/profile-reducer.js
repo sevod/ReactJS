@@ -29,7 +29,7 @@ const profileReducer = (state = initialState, action) => {
         case DELL_POST: {
             return {
                 ...state,
-                postData: [...state.postData.filter(post =>  post.id != action.numberOfPost)],
+                postData: [...state.postData.filter(post => post.id != action.numberOfPost)],
                 newPostText: ''
             };
         }
@@ -39,7 +39,7 @@ const profileReducer = (state = initialState, action) => {
                 profile: action.profile
             };
         }
-        case SET_STATUS :{
+        case SET_STATUS : {
             return {
                 ...state,
                 status: action.status
@@ -55,25 +55,21 @@ export const deletePostActionCreator = (numberOfPost) => ({type: DELL_POST, numb
 export const setStatus = (status) => ({type: SET_STATUS, status});
 export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile});
 
-export const getUserProfileThunkCreator = (userId) => {
-    return (dispath) => {
-        usersAPI.getProfile(userId).then(data => dispath(setUserProfile(data)));
-    }
+export const getUserProfileThunkCreator = (userId) => async (dispath) => {
+    let response = await usersAPI.getProfile(userId);
+    dispath(setUserProfile(response));
 }
-export const getUserStatusThunkCreator = (userID) => {
-    return (dispatch) => {
-        profileAPI.getStatus(userID).then(
-            response => {
-                dispatch(setStatus(response))});
-    }
+
+export const getUserStatusThunkCreator = (userID) => async (dispatch) => {
+    let response = await profileAPI.getStatus(userID);
+    dispatch(setStatus(response));
 }
-export const updateStatusThunkCreator = (status) => {
-    return (dispatch) => {
-        profileAPI.updateStatus(status).then(
-            response => {
-                if (response.data.resultCode === 0)
-                    dispatch(setStatus(status))
-            });
-    }
+
+export const updateStatusThunkCreator = (status) => async (dispatch) => {
+    let response = await profileAPI.updateStatus(status);
+
+    if (response.data.resultCode === 0)
+        dispatch(setStatus(status))
 }
+
 export default profileReducer;
