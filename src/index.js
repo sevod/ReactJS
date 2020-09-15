@@ -6,6 +6,7 @@ import App from './App';
 import store from './redux/redux-store';
 import {BrowserRouter} from "react-router-dom";
 import {Provider} from "react-redux";
+import SamuraiJSApp from "./App";
 
 //for test/lesson
 // setInterval(() => {
@@ -13,13 +14,9 @@ import {Provider} from "react-redux";
 // }, 1000);
 
 ReactDOM.render(
-    <React.StrictMode>
-        <BrowserRouter>
-            <Provider store={store}>
-                <App/>
-            </Provider>
-        </BrowserRouter>
-    </React.StrictMode>,
+    //<React.StrictMode>
+        <SamuraiJSApp/>,
+    //</React.StrictMode>,
     document.getElementById('root')
 );
 

@@ -1018,3 +1018,23 @@ async (dispatch) => {
 React Developer Tools
 Redux DevTools
 
+**15.09.2020**
+------------------
+
+**Урок 92**
+
+И снова тестирование.
+
+Будем тестировать App.js поэтому рефакторим ее.
+
+Тестируем компоненету ProfileStatus.jsx (а она вроде не используется... используется ProfileStatusWithHooks). Создаем ProfileStatus.test.jsx
+Для тестирования читаем статью "testing react components the most definitive guide". Как вариант https://www.valentinog.com/blog/testing-react/
+
+Устанавливаем `npm i react-test-renderer --save-dev`  --save-dev означает, что это не обязательно для установки. Так же важно ставить версию соответствующую версии реакта
+
+Будем использовать `describe` что бы обьединять тесты в одну группу
+
+урок обо всем и не о чем
+
+
+

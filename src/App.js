@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {Route, withRouter} from "react-router-dom";
+import {BrowserRouter, Route, withRouter} from "react-router-dom";
 import Navbar from './components/Navbar/Navbar';
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
@@ -10,11 +10,10 @@ import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
-import {connect} from "react-redux";
+import {connect, Provider} from "react-redux";
 import {getAuthUserThunk} from "./redux/auth-reducer";
 import Preloader from "./components/common/preloader/Preloader";
-import {compose} from "redux";
-import {withAuthRedirect} from "./hoc/withAuthRedirect";
+import store from "./redux/redux-store";
 
 class App extends React.Component {
 
@@ -55,4 +54,14 @@ const mapStateToProps = (state) => ({
 //     connect(mapStateToProps, {getAuthUserThunk})(App)
 // );
 
-export default connect(mapStateToProps, {getAuthUserThunk})(App);
+let AppContainer = withRouter (connect(mapStateToProps, {getAuthUserThunk})(App));
+
+const SamuraiJSApp = (props) => {
+    return <BrowserRouter>
+        <Provider store={store}>
+            <AppContainer/>
+        </Provider>
+    </BrowserRouter>
+}
+
+export default SamuraiJSApp;
