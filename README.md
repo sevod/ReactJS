@@ -341,8 +341,10 @@ let store = createStore(reducers);
 
 <StoreContext.Consumer> после этого должны быть фигурные скобки с НОВОЙ СТРОКИ!!! JS!
 
+
 **28.08.2020**
 --------------------------
+
 **Урок 45**
 
 `REACT-REDUX`
@@ -1067,3 +1069,24 @@ const DialogsContainer = React.lazy (() => import ("./components/Dialogs/Dialogs
 добавляем hoc withSuspense.js для меньшего количества кода
 
 Почитать про чанки, бандлы.
+
+**Урок 95**
+
+Расказывается про github pages.
+
+npm build - соберет наш сайт, но будут проблемы с путями
+
+https://github.com/gitname/react-gh-pages
+
+1. устанавливаем `npm i gh-pages --save-dev`
+2. добавляем в package.json `"homepage": "https://sevod.github.io/ReactJS/",`
+3. добавляем скрипты в package.json
+```
+   "predeploy": "npm run build",
+   "deploy": "gh-pages -d build"
+```
+4. В App.js добавляем `basename={process.env.PUBLIC_URL}` что указывает что путь должен быть относительным.
+
+теперь когда запускаем скрипт deploy все уходит на гитхаб
+
+правил руками packege.json. Если проблемы, то откатываться.
