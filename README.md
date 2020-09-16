@@ -1043,3 +1043,27 @@ Redux DevTools
 Не как у Димыча. Проще с нуля написать, чем понять его логику. Тесты не работают.
 
 
+**16.09.2020**
+---------------
+**Урок 94**
+
+React.lazy  React.Suspense Бандлинг
+
+https://ru.reactjs.org/docs/code-splitting.html
+
+lazy лоудинг, загрузка - это грузится, только тогда когда надо. Обязательно Suspense.
+
+Пример
+```
+import React, {Suspense} from 'react';
+
+//import DialogsContainer from "./components/Dialogs/DialogsContainer";
+const DialogsContainer = React.lazy (() => import ("./components/Dialogs/DialogsContainer"));
+<Suspense fallback={<Preloader/>}>
+    <Route path='/dialogs' render={() => <DialogsContainer/>}/>
+</Suspense>
+```
+
+добавляем hoc withSuspense.js для меньшего количества кода
+
+Почитать про чанки, бандлы.
