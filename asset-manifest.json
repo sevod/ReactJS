@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/ReactJS/static/css/main.fbccf373.chunk.css",
+    "main.js": "/ReactJS/static/js/main.0347e455.chunk.js",
+    "main.js.map": "/ReactJS/static/js/main.0347e455.chunk.js.map",
+    "runtime-main.js": "/ReactJS/static/js/runtime-main.03493e63.js",
+    "runtime-main.js.map": "/ReactJS/static/js/runtime-main.03493e63.js.map",
+    "static/js/2.1ef12679.chunk.js": "/ReactJS/static/js/2.1ef12679.chunk.js",
+    "static/js/2.1ef12679.chunk.js.map": "/ReactJS/static/js/2.1ef12679.chunk.js.map",
+    "static/css/3.bfb86e6f.chunk.css": "/ReactJS/static/css/3.bfb86e6f.chunk.css",
+    "static/js/3.d73ff471.chunk.js": "/ReactJS/static/js/3.d73ff471.chunk.js",
+    "static/js/3.d73ff471.chunk.js.map": "/ReactJS/static/js/3.d73ff471.chunk.js.map",
+    "static/css/4.3d65222f.chunk.css": "/ReactJS/static/css/4.3d65222f.chunk.css",
+    "static/js/4.7152e76c.chunk.js": "/ReactJS/static/js/4.7152e76c.chunk.js",
+    "static/js/4.7152e76c.chunk.js.map": "/ReactJS/static/js/4.7152e76c.chunk.js.map",
+    "static/css/5.5e872ec0.chunk.css": "/ReactJS/static/css/5.5e872ec0.chunk.css",
+    "static/js/5.ad5c2d50.chunk.js": "/ReactJS/static/js/5.ad5c2d50.chunk.js",
+    "static/js/5.ad5c2d50.chunk.js.map": "/ReactJS/static/js/5.ad5c2d50.chunk.js.map",
+    "index.html": "/ReactJS/index.html",
+    "precache-manifest.200bc78caa0b6aa165f6e9b4211b7eb6.js": "/ReactJS/precache-manifest.200bc78caa0b6aa165f6e9b4211b7eb6.js",
+    "service-worker.js": "/ReactJS/service-worker.js",
+    "static/css/3.bfb86e6f.chunk.css.map": "/ReactJS/static/css/3.bfb86e6f.chunk.css.map",
+    "static/css/4.3d65222f.chunk.css.map": "/ReactJS/static/css/4.3d65222f.chunk.css.map",
+    "static/css/5.5e872ec0.chunk.css.map": "/ReactJS/static/css/5.5e872ec0.chunk.css.map",
+    "static/css/main.fbccf373.chunk.css.map": "/ReactJS/static/css/main.fbccf373.chunk.css.map",
+    "static/js/2.1ef12679.chunk.js.LICENSE.txt": "/ReactJS/static/js/2.1ef12679.chunk.js.LICENSE.txt",
+    "static/media/preloader.svg": "/ReactJS/static/media/preloader.fea7bf8f.svg",
+    "static/media/user.png": "/ReactJS/static/media/user.498d600c.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.03493e63.js",
+    "static/js/2.1ef12679.chunk.js",
+    "static/css/main.fbccf373.chunk.css",
+    "static/js/main.0347e455.chunk.js"
+  ]
+}
