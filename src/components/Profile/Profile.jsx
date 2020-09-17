@@ -10,7 +10,11 @@ const Profile = (props) => {
     } else {
         return (
             <div className={s.content}>
-                <ProfileInfo profile={props.profile} status={props.status} updateStatus={props.updateStatus}/>
+                <ProfileInfo profile={props.profile}
+                             status={props.status}
+                             updateStatus={props.updateStatus}
+                             savePhotoThunkCreator={props.savePhotoThunkCreator}
+                             isOwner={props.isOwner}/>
                 <MyPostsContainer/>
             </div>
         );

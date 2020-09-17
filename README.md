@@ -1090,3 +1090,27 @@ https://github.com/gitname/react-gh-pages
 теперь когда запускаем скрипт deploy все уходит на гитхаб
 
 правил руками packege.json. Если проблемы, то откатываться.
+
+**17.09.2020**
+--------------
+
+**Урок 96**
+
+Загрузка картинки.
+
+Правим баг в ProfileContainer.jsx. Добавляем `componentDidUpdate`
+
+В ProfileInfo.jsx добавляем загрузку картинки 
+
+Код в api.js 
+```
+savePhoto(photoFile){
+        let formData = new FormData();
+        formData.append("image", photoFile)
+        return instance.put(`/profile/photo/`, formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        });
+    }
+```

@@ -4,11 +4,6 @@
   }
 
 
-.face{
-    width: 200px;
-    height: 200px;
-}
-
 .top{
     width: 800px;
     height: 100px;
@@ -16,4 +11,9 @@
 
 .description_block{
     padding: 10px;
+}
+
+.mainPhoto{
+    max-width: 200px;
+    max-height: 200px;
 }
