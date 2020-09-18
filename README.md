@@ -1114,3 +1114,19 @@ savePhoto(photoFile){
         });
     }
 ```
+
+
+**18.09.2020**
+------------------
+
+**Урок 97**
+
+дописываем ProfileInfo.jsx
+
+теперь мы можем отправлять данные на сервер.
+
+создаем ProfileDataForm.jsx в нем используем redux-form
+
+для инициализации State'а redux-form используем initialValues при вызове компоненты redux-form (в нашем случае в ProfileInfo.jsx)
+
+

@@ -42,11 +42,13 @@ export const profileAPI = {
                 'Content-Type': 'multipart/form-data'
             }
         });
+    },
+    saveProfile(profile){
+        return instance.put('/profile/', profile);
     }
 }
 
 export const authAPI = {
-
     me(){
         return instance.get('auth/me').then(response => response.data);
     },

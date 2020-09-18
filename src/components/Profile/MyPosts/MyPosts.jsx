@@ -7,7 +7,7 @@ import {TextArea} from "../../common/FormsControls/FormsControls";
 
 const MyPosts = React.memo ( (props) => {
     let postElements = props.postData.map(
-        postData => (<Post message={postData.message} likesCount={postData.likesCount}/>)
+        postData => (<Post key={postData.id} message={postData.message} likesCount={postData.likesCount}/>)
     );
 
     const onSubmit = (values) => {
