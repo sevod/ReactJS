@@ -1129,4 +1129,11 @@ savePhoto(photoFile){
 
 для инициализации State'а redux-form используем initialValues при вызове компоненты redux-form (в нашем случае в ProfileInfo.jsx)
 
+**19.09.2020**
+-------------------
+
+**Урок 98**
+
+делаем каптчу. В api.js добавляем getCaptchaUrl. Правим auth-reducer.js и Login.jsx
+
 
