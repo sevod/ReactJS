@@ -1136,4 +1136,28 @@ savePhoto(photoFile){
 
 делаем каптчу. В api.js добавляем getCaptchaUrl. Правим auth-reducer.js и Login.jsx
 
+**Урок 99**
+
+Общеобзорный урок. Многое уже сумбурно.
+
+При роутинге `exact` означает полное совпадение пути. Файл App.js
+ `<Route exact path='/' render={withSuspense(ProfileContainer)}/>`
+ 
+ Меняем componentDidMount
+```
+  window.addEventListener("unhandledrejection", function (promiseRejectionEvent) {
+ 
+         })
+```
+ В App добавляем catchAllUnhandledErrors
+ 
+ 
+ Исключения не делал, у Димыча уже все сумбурно.
+ ```
+try{
+ 
+ } catch(error){
+ 
+ }
+```
 

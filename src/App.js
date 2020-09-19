@@ -1,6 +1,6 @@
 import React, {Suspense} from 'react';
 import './App.css';
-import {BrowserRouter, Route, withRouter} from "react-router-dom";
+import {BrowserRouter, Route, Switch, withRouter} from "react-router-dom";
 import Navbar from './components/Navbar/Navbar';
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
@@ -23,9 +23,19 @@ const UsersContainer = React.lazy(() => import ("./components/Users/UsersContain
 
 
 class App extends React.Component {
+    catchAllUnhandledErrors = (promiseRejectionEvent) => {
+        alert("Some error occured");
+
+    }
+
 
     componentDidMount() {
         this.props.getAuthUserThunk();
+        window.addEventListener("unhandledrejection", this.catchAllUnhandledErrors);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener("unhandledrejection", this.catchAllUnhandledErrors);
     }
 
     render() {
@@ -41,6 +51,10 @@ class App extends React.Component {
                         {/*<Route path='/profile/:userId?' render={() => <Suspense fallback={<Preloader/>}>*/}
                         {/*    <ProfileContainer/>*/}
                         {/*</Suspense>}/>*/}
+                        {/*<Switch>*/}
+
+                        <Route exact path='/' render={withSuspense(ProfileContainer)}/>
+
 
                         <Route path='/profile/:userId?' render={withSuspense(ProfileContainer)}/>
 
@@ -54,6 +68,8 @@ class App extends React.Component {
                         <Route path='/music' render={() => <Music/>}/>
                         <Route path='/settings' render={() => <Settings/>}/>
                         <Route path='/login' render={() => <Login/>}/>
+                        {/*<Route path='*' render={() => <div>404 NOT FOUND</div>}/>*/}
+                        {/*</Switch>*/}
                     </div>
                 </div>
             );
